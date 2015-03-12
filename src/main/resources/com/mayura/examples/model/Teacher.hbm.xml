@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <subclass name="com.mayura.examples.model.Teacher" extends="com.mayura.examples.model.User">
+        <property name="course" type="string">
+            <column name="course"/>
+        </property>
+        <property name="teacherClass" type="string">
+            <column name="class"/>
+        </property>
+    </subclass>
+</hibernate-mapping>

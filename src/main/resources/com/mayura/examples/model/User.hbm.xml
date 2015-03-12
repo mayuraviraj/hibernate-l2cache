@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mayura.examples.model.User" table="users" >
+        <cache usage="transactional" region="xml-configured-cache"/>
+        <id name="entityId" type="java.lang.Integer">
+            <column name="ext_id" />
+            <generator class="identity" />
+        </id>
+        <discriminator type="java.lang.String">
+            <column name="type">
+            </column>
+        </discriminator>
+        <property name="name" type="string">
+            <column name="user_name"/>
+        </property>
+        <property name="address" type="string">
+            <column name="address"/>
+        </property>
+    </class>
+</hibernate-mapping>

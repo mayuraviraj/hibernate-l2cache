@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">dbuser</property>
+        <property name="hibernate.connection.password">password</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/testdb</property>
+        <property name="connection_pool_size">5</property>
+        <property name="hbm2ddl.auto">create</property>
+        <property name="show_sql">false</property>
+
+        <property name="hibernate.cache.infinispan.cfg">infinispan.xml</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.infinispan.InfinispanRegionFactory</property>
+        <property name="hibernate.cache.infinispan.statistics">true</property>
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+        <property name="hibernate.cache.infinispan.entity.cfg">xml-configured-cache</property>
+
+        <mapping class="com.mayura.examples.model.Teacher"/>
+        <mapping class="com.mayura.examples.model.Student"/>
+        <mapping class="com.mayura.examples.model.User"/>
+
+        <mapping resource="com/mayura/examples/model/Student.hbm.xml" />
+        <mapping resource="com/mayura/examples/model/Teacher.hbm.xml" />
+        <mapping resource="com/mayura/examples/model/User.hbm.xml" />
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,19 @@
+<infinispan
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="urn:infinispan:config:6.0 http://www.infinispan.org/schemas/infinispan-config-6.0.xsd"
+        xmlns="urn:infinispan:config:6.0">
+    <namedCache name="xml-configured-cache">
+        <eviction strategy="LIRS" maxEntries="10"/>
+        <customInterceptors>
+            <interceptor class="com.mayura.examples.persistant.CacheInterceptor" position="FIRST"/>
+        </customInterceptors>
+    </namedCache>
+    <!--<cache-container default-cache="default">-->
+        <!--<local-cache name="xml-configured-cache">-->
+            <!--<eviction strategy="LIRS" max-entries="10"/>-->
+            <!--<custom-interceptors>-->
+                <!--<interceptor class="com.mayura.examples.persistant.CacheInterceptor" position="FIRST"/>-->
+            <!--</custom-interceptors>-->
+        <!--</local-cache>-->
+    <!--</cache-container>-->
+</infinispan>
